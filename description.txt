@@ -1,7 +1,17 @@
 BannerAltar - A mod that allows you to constantly get buffs from banners added to it, regardless of the player's distance from altar.
-git: , 
+To work, the altar must be placed above the back.
+Recipe:
+- Ebonwood Table/Shadewood Table
+- Honey Chair x2
+- Bunny Banner
+- Bird Banner
+- Goldfish Banner
+
+BannerAltar sources:
+git: https://github.com/Xitcklif/BannerAltar, 
 stream: 
 
-The "BannerBonanza" mod is taken as a basis
+The "BannerBonanza" mod is taken as a basis.
+BannerBonanza sources:
 git: https://github.com/JavidPack/BannerBonanza/tree/1.4, 
 stream: https://steamcommunity.com/sharedfiles/filedetails/?id=2626764822
