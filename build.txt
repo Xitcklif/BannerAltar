@@ -1,0 +1,3 @@
+displayName = Banner Altar
+author = Xitcklif
+version = 0.1

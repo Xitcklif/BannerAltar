@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "mhH9mohfWyE9hI7pWipWxh13CNaba49HuoivEFRH0cL45BIeEgkRe/OJeJYR6pSmq0DLggVo9spnk3Us/vdSVA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sergey\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\BannerAltar\\BannerAltar.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sergey\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+  ],
+  "logs": []
+}

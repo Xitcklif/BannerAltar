@@ -1,0 +1,7 @@
+BannerAltar - A mod that allows you to constantly get buffs from banners added to it, regardless of the player's distance from altar.
+git: , 
+stream: 
+
+The "BannerBonanza" mod is taken as a basis
+git: https://github.com/JavidPack/BannerBonanza/tree/1.4, 
+stream: https://steamcommunity.com/sharedfiles/filedetails/?id=2626764822

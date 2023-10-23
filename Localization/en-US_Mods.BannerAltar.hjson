@@ -1,0 +1,13 @@
+Tiles.BannerAltarTile.MapEntry: Banner Altar Tile
+
+Items: {
+	BannerAltarItem: {
+		DisplayName: Banner Altar Item
+		Tooltip: Donate a banner here and get him force
+	}
+
+	BannerAltar: {
+		DisplayName: Banner Altar
+		Tooltip: ""
+	}
+}
