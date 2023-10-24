@@ -51,8 +51,6 @@ namespace BannerAltar.Content.Tiles
         {
             if (BannerAltar.auraEnabled && BannerAltar.aboveTheRack)
             {
-                Main.NewText($"{ModContent.GetModTile(Main.tile[bonanzaTileX, bonanzaTileY].TileType)}");
-                Main.NewText($"TileFrameX: {Main.tile[bonanzaTileX, bonanzaTileY].TileFrameX}, TileFrameY: {Main.tile[bonanzaTileX, bonanzaTileY].TileFrameY}");
                 ModContent.GetModTile(Main.tile[bonanzaTileX, bonanzaTileY].TileType).NearbyEffects(bonanzaTileX, bonanzaTileY, true);
             }
         }

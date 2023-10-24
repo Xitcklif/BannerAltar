@@ -9,7 +9,7 @@ Recipe:
 
 BannerAltar sources:
 git: https://github.com/Xitcklif/BannerAltar, 
-stream: 
+stream: https://steamcommunity.com/sharedfiles/filedetails/?id=3058774264
 
 The "BannerBonanza" mod is taken as a basis.
 BannerBonanza sources:

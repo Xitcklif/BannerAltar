@@ -123,27 +123,5 @@ namespace BannerAltar.Content.Tiles
         {
             GetInstance<BannerAltarTileEntity>().Kill(i, j);
         }
-
-        /*public override void NearbyEffects(int i, int j, bool closer)
-        {
-            Tile tile = Main.tile[i, j];
-            if (tile.TileFrameX == 0 && tile.TileFrameY == 0)
-            {
-                if (closer)
-                {
-                    Player player = Main.LocalPlayer;
-                    int left = i - (tile.TileFrameX % 54 / 18);
-                    int top = j - (tile.TileFrameY / 18);
-
-                    int index = GetInstance<BannerRackTE>().Find(left, top);
-                    if (index == -1)
-                    {
-                        return;
-                    }
-                    BannerRackTE bannerRackTE = (BannerRackTE)TileEntity.ByID[index];
-                    bannerRackTE.Nearby();
-                }
-            }
-        }*/
     }
 }
