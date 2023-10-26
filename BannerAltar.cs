@@ -32,7 +32,6 @@ namespace BannerAltar
         public const string AssetPath = $"{nameof(BannerAltar)}/Assets/";
 
         public static int BannerAltarCustomCurrencyId;
-        public static bool auraEnabled = false;
         public static bool aboveTheRack = false;
 
         public override void Load()

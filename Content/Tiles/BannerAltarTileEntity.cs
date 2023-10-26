@@ -25,9 +25,6 @@ namespace BannerAltar.Content.Tiles
 {
     public class BannerAltarTileEntity : ModTileEntity
     {
-        public int bonanzaTileX = 0;
-        public int bonanzaTileY = 0;
-
         public override bool IsTileValidForEntity(int i, int j)
         {
             Tile tile = Main.tile[i, j];
@@ -40,6 +37,7 @@ namespace BannerAltar.Content.Tiles
             {
                 NetMessage.SendTileSquare(Main.myPlayer, i + 1, j + 1, 4);
                 NetMessage.SendData(MessageID.TileEntityPlacement, -1, -1, null, i, j, Type, 0f, 0, 0, 0);
+
                 return -1;
             }
 
@@ -49,9 +47,25 @@ namespace BannerAltar.Content.Tiles
 
         public override void Update()
         {
-            if (BannerAltar.auraEnabled && BannerAltar.aboveTheRack)
+            int i = this.Position.X;
+            int j = this.Position.Y;
+
+            Tile tile = Main.tile[i, j];
+            int left = i - (tile.TileFrameX % 54 / 18);
+            int top = j - (tile.TileFrameY / 18);
+
+            if (ModContent.GetModTile(Main.tile[left, top + 4].TileType).FullName.Equals("BannerBonanza/BannerRackTile"))
             {
-                ModContent.GetModTile(Main.tile[bonanzaTileX, bonanzaTileY].TileType).NearbyEffects(bonanzaTileX, bonanzaTileY, true);
+                BannerAltar.aboveTheRack = true;
+            }
+            else
+            {
+                BannerAltar.aboveTheRack = false;
+            }
+
+            if (BannerAltar.aboveTheRack)
+            {
+                ModContent.GetModTile(Main.tile[left, top + 4].TileType).NearbyEffects(left, top + 4, true);
             }
         }
     }

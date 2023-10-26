@@ -32,8 +32,6 @@ namespace BannerAltar.Content.Tiles
 {
     public class BannerAltarTile : ModTile
     {
-        private bool unlocked = false;
-
         public override void SetStaticDefaults()
         {
             // Properties
@@ -71,29 +69,6 @@ namespace BannerAltar.Content.Tiles
 
         public override bool RightClick(int i, int j)
         {
-            Tile tile = Main.tile[i, j];
-            int left = i - (tile.TileFrameX % 54 / 18);
-            int top = j - (tile.TileFrameY / 18);
-            if (ModContent.GetModTile(Main.tile[left, top + 4].TileType).FullName.Equals("BannerBonanza/BannerRackTile"))
-            {
-                ModContent.GetModTile(Main.tile[left, top + 4].TileType).RightClick(left, top + 4);
-                int index = GetInstance<BannerAltarTileEntity>().Find(left, top);
-                if (index == -1)
-                {
-                    BannerAltar.aboveTheRack = false;
-                    return true;
-                }
-                BannerAltarTileEntity bannerAltarTileEntity = (BannerAltarTileEntity)TileEntity.ByID[index];
-                bannerAltarTileEntity.bonanzaTileX = left;
-                bannerAltarTileEntity.bonanzaTileY = top + 4;
-                BannerAltar.aboveTheRack = true;
-            }
-            else
-            {
-                BannerAltar.aboveTheRack = false;
-                return true;
-            }
-
             Mod bannerBonanza = null;
 
             try
@@ -103,17 +78,16 @@ namespace BannerAltar.Content.Tiles
             catch (System.Collections.Generic.KeyNotFoundException e)
             {
                 Main.NewText($"Mod Banner Bonanza wasn't found");
+                return false;
             }
 
-            if (!BannerAltar.auraEnabled && bannerBonanza != null)
+            Tile tile = Main.tile[i, j];
+            int left = i - (tile.TileFrameX % 54 / 18);
+            int top = j - (tile.TileFrameY / 18);
+
+            if (ModContent.GetModTile(Main.tile[left, top + 4].TileType).FullName.Equals("BannerBonanza/BannerRackTile"))
             {
-                BannerAltar.auraEnabled = true;
-                Main.NewText($"{bannerBonanza.DisplayName} was found, banners force now is enabled");
-            }
-            else if (BannerAltar.auraEnabled && bannerBonanza != null)
-            {
-                BannerAltar.auraEnabled = false;
-                Main.NewText($"{bannerBonanza.DisplayName} was found, banners force now is disabled");
+                ModContent.GetModTile(Main.tile[left, top + 4].TileType).RightClick(left, top + 4);
             }
 
             return true;

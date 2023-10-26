@@ -1,6 +1,6 @@
 displayName = Banner Altar
 author = Xitcklif
-version = 0.2.1
+version = 0.3.0
 
 homepage = https://steamcommunity.com/sharedfiles/filedetails/?id=3058774264
 hideCode = false
